@@ -1,0 +1,200 @@
+1) Faça um programa que determine os cinco primeiros múltiplos de 3, considerando somente
+números maiores do que zero.
+
+for x in range(1, 6):
+    print(x*3)
+
+# Alternativamente:
+
+x = 3
+i = 1
+y = 0
+
+while y < 15:
+    y = x*i
+    print(y)
+    i = i + 1
+
+2) Escreva um programa que escreva de 1 a 100, de um em um, três vezes, usando for e whille.
+
+# for:
+
+for x in range(3):
+    for y in range (1, 101):
+        print(y)
+
+# while:
+
+x = 1
+y = 1
+
+while y <= 3:
+    while x <= 100:
+        print(x)
+        x = x + 1
+    x = 1
+    y = y + 1
+
+3) Faça um programa que peça para o usuário digitar dez valores e calcule a soma deles.
+
+soma = 0
+
+for i in range (1,11):
+    x = float(input(f'Digite o valor {i}: '))
+    soma = soma + x
+
+print(f'A soma dos números digitados é: {soma}')
+
+4) Faça um programa que leia dez números inteiros positivos, ignorando os negativos, e imprima a média deles.
+
+soma = 0
+y = 0
+
+for i in range (1,11):
+    x = int(input(f'Digite o valor {i}: '))
+    if x >= 0:
+        soma = soma + x
+        y = y + 1
+
+print(f'A média dos números digitados é: {soma/y}')
+
+5) Faça um programa que calcule e imprima a soma dos x primeiros números pares.
+
+qtd = int(input('Informe quantos números pares você quer somar: '))
+soma = 0
+
+for x in range(qtd):
+    soma = soma + 2*x
+
+print(f'A soma dos {qtd} primeiros números pares é: {soma}')
+
+6) Faça um programa qUe leia um número natural n e imprima todos os números naturais até n em ordem crescente.
+
+x = 0
+n = int(input('Digite um número natural: '))
+
+while x <= n:
+    print(x)
+    x = x + 1
+
+7) Faça um programa qUe leia um número natural n e imprima todos os números naturais até n em ordem decrescente.
+
+x = 0
+n = int(input('Digite um número natural: '))
+
+while x <= n:
+    print(n)
+    n = n - 1
+
+8) Faça um algoritmo que leia um número positivo e imprima seus divisores.
+
+num = int(input('Digite um número inteiro positivo: '))
+
+if num >= 0:
+    print(f'Divisores do número {num}:')
+    for i in range(1, num + 1):
+        if num%i == 0:
+            print(i)
+else:
+    print('Digite um número inteiro da próxima vez.')
+
+9) Faça um programa que leia um número n e calcule o valor da série 1 + 1/1! + 1/2! + … + 1/n!.
+
+n = int(input('Digite um número natural n: '))
+fat = 1
+soma = 0
+
+if n <= 0:
+    print('Digite um número positivo.')
+elif n == 0:
+    print('O resultado da série 1 é: 1')
+elif n == 1:
+    print('O resultado da série 1 + 1/1! é: 2')
+else:
+    for i in range(2, n+1):
+        fat = fat*i
+        a = 1/fat
+        soma = soma + a
+
+print(f'O resultado da série 1 + 1/1! + 1/2! + … + 1/{n}! é: {2 + soma}')
+
+10) Escreva um programa que permita a um aluno inserir uma sequência arbitrária de notas (válidas
+no intervalo de 10 a 20) e calcule e imprima a média aritmética. O número de notas a serem inseridas
+não será informado, e o programa deve parar de rodar ao ser inserida uma nota inválida.
+
+nota = float(input('Digite uma nota entre 10 e 20: '))
+soma = 0
+n = 0
+
+while 10 <= nota <= 20:
+    soma = soma + nota
+    n = n + 1
+    nota = float(input('Digite uma nota entre 10 e 20: '))
+else:
+    print('Nota inválida digitada.')
+
+print(f'A média das notas digitadas é: {soma/n}')
+
+11) Faça um programa que receba um número inteiro maior do que 1 e verifique se o número fornecido é primo.
+
+print('Vamos verificar se um número específico é primo.')
+n = int(input('Digite um número inteiro maior do que 1: '))
+d = 0
+
+if n < 1:
+    print('Erro. Você não digitou um número maior do que 1.')
+else:
+    for i in range(1,n + 1):
+        if n%i == 0:
+             d = d + 1
+
+if d == 2:
+    print('O número em questão é primo.')
+else:
+    print('O número em questão NÃO é primo.')
+
+12) Escreva um programa que leia um número inteiro positivo n e, em seguida, imprima n linhas do Triângulo de Floyd.
+
+n = int(input('Digite um número inteiro positivo: '))
+x = 1
+
+print('Triângulo de Floyd: \n')
+
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(x, end = '\t')
+        x += 1
+    print()
+
+13) Faça um programa que leia um número inteiro não negativo n e imprima a soma dos n primeiros números primos.
+
+print('Digite um número inteiro maior do que 1 ou digite "0" se quiser terminar o programa.')
+
+while True:
+
+    n = int(input('Digite: '))
+
+    soma = 0
+    x = 1
+    k = 0
+
+    if n < 0:
+        print('Erro. Você não digitou um número inteiro POSITIVO.')
+    elif n == 0:
+        print('Programa encerrado.')
+        break
+    else:
+        while True:
+            achei = True
+            x += 1
+            for j in range(2, x):
+                if x % j == 0:
+                    achei = False
+                    break
+            if achei:
+                k += 1
+                soma += x
+            if k == n:
+                break
+
+    print(f'Soma: {soma}')
