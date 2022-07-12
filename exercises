@@ -6,7 +6,7 @@ números maiores do que zero.
 for x in range(1, 6):
     print(x*3)
 
-# Alternativamente:
+Alternativamente:
 
 x = 3
 i = 1
@@ -19,13 +19,13 @@ while y < 15:
 
 2) Escreva um programa que escreva de 1 a 100, de um em um, três vezes, usando for e whille.
 
-# for:
+for:
 
 for x in range(3):
     for y in range (1, 101):
         print(y)
 
-# while:
+while:
 
 x = 1
 y = 1
